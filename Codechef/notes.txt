@@ -1,2 +1,3 @@
 https://www.codechef.com/problems/[Problem_Code]
-https://www.codechef.com/[Contest_code]
+https://www.codechef.com/[Contest_Code]
+https://www.codechef.com/[Contest_Code]/[Problem_Code]

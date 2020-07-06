@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define ll long long int
 #define tc int t;cin>>t;while(t--)
 #define um unordered_map<ll,ll> 
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
@@ -16,17 +16,19 @@ int main()
     	cin>>n;
     	um total,totalA,totalB;
     	ll A[n],B[n];
+    	ll mi = INT_MAX;
     	for(ll i=0;i<n;i++){
     		cin>>A[i];
 			total[A[i]]++;
 			totalA[A[i]]++;
+			mi = min(A[i],mi);
     		
 		}
 		for(ll j=0;j<n;j++){
 			cin>>B[j];
 			total[B[j]]++;
 			totalB[B[j]]++;
-    		
+    		mi = min(B[j],mi);
 		}
 		bool identical=true,ans_exist = true;
 		for(auto x : total){
@@ -62,7 +64,7 @@ int main()
 			}
 		}
 		while(!qA.empty()){
-			score += min(qA.front(),qB.front());
+			score += min(2*mi,min(qA.front(),qB.front()));
 			qA.pop();
 			qB.pop();
 		}
