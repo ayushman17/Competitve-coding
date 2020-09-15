@@ -5,7 +5,7 @@ using namespace std;
 
 signed main(){
 	ios_base::sync_with_stdio(false); 
-    cin.tie(NULL);    
+    cin.tie(NULL);cout.tie(NULL);    
 	int t;cin>>t;
 	while(t--){
 		int n,ans=0,q;cin>>n;
@@ -17,7 +17,6 @@ signed main(){
 		double i  = floor(double((-1)+double(sqrt((1+(4*total)))))/2);
 		for(int m=i-1;m<=i;m++){
 			q=(total/2)-((m*(m+1))/2);
-			if(m<0) continue;
 			if(q>=n) continue;
 			if(q<0) break;
 			if(q==0){
