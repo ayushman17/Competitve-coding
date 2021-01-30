@@ -7,19 +7,19 @@ signed main(){
 	int tc;
 	cin>>tc;
 	while(tc--){
-		int n,count=0,i=0,j=0;
+		int n;
 		cin>>n;
-		int a[n];
-		for(int k=0;k<n;k++) cin>>a[k];
-		while(i<=n-2){
-			if(a[j]>a[j+1] || j>n-2){
-				i++;				
-				j=i;
-				continue;
-			}
-			j++;				
-			count++;
+		vector<int> arr(n+1);
+		for(int i=1;i<=n;i++) cin>>arr[i];
+		vector<int> dp(n+1,0);
+		dp[1]=1;
+		for(int i=2;i<=n;i++){
+			if(arr[i-1]<=arr[i]) dp[i]=dp[i-1]+1;
+			else dp[i]=1;
 		}
-		cout << count + n << endl;
+		for(int i=1;i<=n;i++){
+			dp[0]+=dp[i];
+		}
+		cout<<dp[0]<<endl;
 	}
 }
